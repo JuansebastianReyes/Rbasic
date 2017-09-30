@@ -1,6 +1,11 @@
-#declarar funcion suma 
+#declara funcion suma 
 suma <- function(x,y){
   x + y
+}
+
+#declara funcion resta
+resta <- function(x,y){
+  x-y
 }
 
 #declara funcion potencia
@@ -13,7 +18,7 @@ factorial <- function(x){
   if (x==0){
     1
   }else{
-    x * factorial(x-1)
+    x * factorial(resta(x,1))
   }
 }
 
@@ -31,6 +36,7 @@ y <- 2
 z <- 11
 
 suma(x,y)
+resta(x,y)
 potencia(x)
 factorial(x)
 binario(z)
