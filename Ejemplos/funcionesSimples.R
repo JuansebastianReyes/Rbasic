@@ -8,6 +8,24 @@ resta <- function(x,y){
   x-y
 }
 
+#declara funcion multiplicacion
+multi <- function(x,y){
+  if(x == 1){
+    y
+  }else{
+    suma(y,multi(resta(x,1),y))
+  }
+}
+
+#declara funcion division
+division <- function(x,y){
+  if(x<y){
+    0
+  }else{
+    suma(1,division(resta(x,y),y))
+  }
+}
+
 #declara funcion potencia
 potencia <- function(x){
   x*x
@@ -31,12 +49,14 @@ binario <- function(x){
   }
 }
 
-x <- 5
+x <- 10
 y <- 2
 z <- 11
 
 suma(x,y)
 resta(x,y)
+multi(x,y)
+division(x,y)
 potencia(x)
 factorial(x)
 binario(z)
