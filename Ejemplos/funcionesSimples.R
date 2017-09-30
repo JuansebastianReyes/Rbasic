@@ -26,9 +26,18 @@ division <- function(x,y){
   }
 }
 
+#declara la fucnion madulo
+modulo <- function(x,y){
+  if(x<y){
+    x
+  }else{
+    modulo(resta(x,y),y)
+  }
+}
+
 #declara funcion potencia
 potencia <- function(x){
-  x*x
+  multi(x,x)
 }
 
 #declara funcion factorial
@@ -36,7 +45,7 @@ factorial <- function(x){
   if (x==0){
     1
   }else{
-    x * factorial(resta(x,1))
+    multi(x,factorial(resta(x,1)))
   }
 }
 
@@ -45,19 +54,20 @@ binario <- function(x){
   if(x/2 == 0){
     x
   }else{
-    (x %% 2) + 10 * binario(x %/% 2)
+    suma(modulo(x,2),multi(10 , binario(division(x,2))))
   }
 }
 
 x <- 10
-y <- 2
+y <- 4
 z <- 11
 
 suma(x,y)
 resta(x,y)
 multi(x,y)
 division(x,y)
+modulo(z,y)
 potencia(x)
-factorial(x)
+factorial(y)
 binario(z)
 
